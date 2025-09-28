@@ -9,6 +9,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="theme-color" content="#1e1e1e">
   <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <link rel="stylesheet" type="text/css" href="css/initial.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://kit.fontawesome.com/7508f396ac.js" crossorigin="anonymous"></script>
   <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
@@ -16,19 +17,11 @@
   <meta http-equiv="Expires" content="Thu, 01 Jan 1970 00:00:00 GMT">
 </head>
 
-<body>
+<body style="background-color: #121414;">
   <div id="outer">
     <div id="content" class="">
-      <h1>Wire-Pod Setup</h1>
-      <hr />
+      <h1>Wire-Pod+ Setup</h1>
       <div id="setup-status"></div>
-      <div id="config-options" style="display: block">
-        <p>
-          Welcome to wire-pod! Configure these
-          options to your liking then click the "Submit Settings" button at the
-          bottom to finish setting up wire-pod.
-        </p>
-        <hr />
         <div id="section-conn" style="display: block">
           <h3>Connection Method</h3>
           <hr class="small-hr">
@@ -41,11 +34,10 @@
               IP Address (recommended for OSKR/dev-unlocked robots)
             </option>
           </select>
-          <div class="center" id="portViz" style="display: none">
+          <div class="center" id="portViz" style="display: none;">
             <label for="portInput">Input custom port here (default is 443)</label>
             <input type="text" id="portInput" name="portInput" placeholder="443" />
           </div>
-          <hr />
         </div>
 
         <div id="section-language" style="display: none">
@@ -64,20 +56,16 @@
               <option value="tr-TR">Turkish (TR)</option>
               <option value="zh-CN">Chinese (CN)</option>
               <option value="ru-RU">Russian (RU)</option>
-              <option value="nt-NL">Dutch (NL)</option>
+              <option value="nl-NL">Dutch (NL)</option>
               <option value="uk-UA">Ukrainian (UA)</option>
-              <option value="vi-VN">VietNamese (VN)</option>
+              <option value="vi-VN">Vietnamese (VN)</option>
             </select>
           </div>
           <hr />
         </div>
 
-        <small class="desc">Weather and Knowledge Graph settings can be configured in the Server Settings page once
-          wire-pod is set up.</small>
-        <hr />
-
         <button onclick="sendSetupInfo()">
-          Submit Settings
+          Continue
         </button>
       </div>
     </div>
