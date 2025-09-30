@@ -132,7 +132,7 @@ button.outline, [type=submit].outline {
 }
 
 button:hover {
-  box-shadow: 0 0 8px #00ff7f, 0 0 16px #00ff7f;
+  box-shadow: 0 0 8px var(--fg-color), 0 0 16px var(--fg-color);
   transform: scale(1.03);
 }
 

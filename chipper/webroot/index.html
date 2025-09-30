@@ -8,6 +8,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="theme-color" content="#1e1e1e">
   <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <link rel="stylesheet" type="text/css" href="css/index.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <script src="https://kit.fontawesome.com/7508f396ac.js" crossorigin="anonymous"></script>
   <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
@@ -18,16 +19,12 @@
 <body>
   <div id="outer">
     <div id="content" class="">
-      <h1>Wire-Pod</h1>
+      <h1>Wire-Pod+</h1>
       <!-- Bot stats, connected and battery -->
       <div id="botStats"></div>
       <hr />
 
       <div class="main-nav-parent">
-        <!--WP settings-->
-        <div class="main-nav-child">
-          <a href="setup.html"><i class="fa-solid fa-gear"></i><br />Server Settings</a>
-        </div>
         <!--Bot Settings-->
         <div class="main-nav-child">
           <a href="/sdkapp"><i class="fa solid fa-toolbox"></i><br />Bot Settings</a>
@@ -41,21 +38,6 @@
         <div class="main-nav-child">
           <a href="#" onclick="showIntents(); return false;"><i class="fa-solid fa-microphone-lines" id="icon-Intents"
               name="icon"></i><br />Custom Intents</a>
-        </div>
-        <!--Logs-->
-        <div class="main-nav-child">
-          <a href="#" onclick="showLog(); return false;"><i class="fa-solid fa-file-lines" id="icon-Logs"
-              name="icon"></i><br />Log</a>
-        </div>
-        <!--Version-->
-        <div class="main-nav-child">
-          <a href="#" onclick="showVersion(); return false;"><i class="fa-solid fa-code-compare" id="icon-Version"
-              name="icon"></i><br />Version Info</a>
-        </div>
-        <!--UI Customizer-->
-        <div class="main-nav-child">
-          <a href="#" onclick="showUICustomizer(); return false;"><i class="fa-solid fa-pen-nib" id="icon-Customizer"
-              name="icon"></i><br />UI Settings</a>
         </div>
       </div>
       <hr />
@@ -183,6 +165,10 @@
         <hr />
       </div>
 
+      <div class="top-right-nav">
+        <a href="setup.html"><i class="fa-solid fa-gear"></i></a>
+      </div>
+
       <div id="section-uicustomizer" style="display: none">
         <h2>UI Customizer</h2>
         <hr class="small-hr">
@@ -199,7 +185,7 @@
         <hr class="small-hr">
         <p>Body Font</p>
         <select onchange="setUIFont()" id="body-font-choose">
-          <option style="font-family: 'DroidSans';" value="droidsans" selected="selected">Droid Sans (default)</option>
+          <option style="font-family: 'Sans-Serif';" value="droidsans" selected="selected">Sans-Serif (default)</option>
           <option style="font-family: 'IBMVGA';" value="ibmvga">IBM VGA 8x16 (retro)</option>
         </select>
         <hr />

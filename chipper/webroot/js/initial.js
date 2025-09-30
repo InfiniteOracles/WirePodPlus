@@ -1,22 +1,3 @@
-function checkLanguage() {
-  fetch("/api/get_stt_info")
-    .then((response) => response.json())
-    .then((parsed) => {
-      const sectionLanguage = document.getElementById("section-language");
-      const languageSelection = document.getElementById("languageSelection");
-
-      if (parsed.provider !== "vosk" && parsed.provider !== "whisper.cpp") {
-        console.log("stt not vosk/whisper");
-        sectionLanguage.style.display = "none";
-        languageSelection.value = "en-US";
-      } else {
-        sectionLanguage.style.display = "block";
-        console.log(parsed.language);
-        languageSelection.value = "en-US";
-      }
-    });
-}
-
 function updateSetupStatus(statusString) {
   const setupStatus = document.getElementById("setup-status");
   setupStatus.innerHTML = `<p>${statusString}</p>`;
@@ -26,10 +7,9 @@ function sendSetupInfo() {
   document.getElementById("config-options").style.display = "none";
   updateSetupStatus("Initiating setup...");
 
-  const language = document.getElementById("languageSelection").value;
+  const language = "en-US";
   const langData = { language };
 
-  document.getElementById("languageSelectionDiv").style.display = "none";
 
   fetch("/api/set_stt_info", {
     method: "POST",

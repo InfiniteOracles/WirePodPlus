@@ -1,0 +1,11 @@
+body {
+  background-color: #121414;
+}
+
+h1 {
+  font-family: sans-serif;
+}
+
+.main-nav-parent .main-nav-child > a {
+  color: var(--text-color);
+}
