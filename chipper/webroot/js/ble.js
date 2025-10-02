@@ -9,15 +9,8 @@ externalSetup.innerHTML = vectorEpodSetup;
 
 function showBotAuth() {
   GetLog = false;
-  toggleSections("section-botauth", "icon-BotAuth");
+  toggleVisibility(getSections(), "section-botauth", "icon-BotAuth");
   checkBLECapability();
-}
-
-function toggleSections(showSection, icon) {
-  const sections = ["section-intents", "section-log", "section-botauth", "section-version", "section-uicustomizer"];
-  sections.forEach((section) => (document.getElementById(section).style.display = "none"));
-  document.getElementById(showSection).style.display = "block";
-  updateColor(icon);
 }
 
 function checkBLECapability() {

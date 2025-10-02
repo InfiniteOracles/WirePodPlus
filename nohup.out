@@ -1,0 +1,34 @@
+[2025-09-29T14:58:18.783Z] info  code-server 4.104.2 b0992ddb3e3b398371da6bcfbe21a70b4d66eb8d
+[2025-09-29T14:58:18.783Z] info  Using user-data-dir /home/evan/.local/share/code-server
+[2025-09-29T14:58:18.795Z] info  Using config file /home/evan/.config/code-server/config.yaml
+[2025-09-29T14:58:18.795Z] info  HTTP server listening on http://127.0.0.1:8080/
+[2025-09-29T14:58:18.795Z] info    - Authentication is enabled
+[2025-09-29T14:58:18.795Z] info      - Using password from /home/evan/.config/code-server/config.yaml
+[2025-09-29T14:58:18.795Z] info    - Not serving HTTPS
+[2025-09-29T14:58:18.795Z] info  Session server listening on /home/evan/.local/share/code-server/code-server-ipc.sock
+Commit SHA: 0bf4c21
+Initializing variables
+SDK info path: /home/evan/.anki_vector/
+API config successfully read
+Reading session certs for robot IDs
+Initiating vosk voice processor with language en-US
+Opening VOSK model (../vosk/models/en-US/model)
+Initializing VOSK recognizers
+VOSK initiated successfully
+Running recognizer test
+Using general recognizer
+Text (from test): how are you
+Vosk test successful! (Took 518.396117ms)
+Loading plugins
+BLE API is unregistered
+Starting webserver at port 8080 (http://localhost:8080)
+Starting jdocs pinger ticker
+Initiating TLS listener, cmux, gRPC handler, and REST handler
+Registering escapepod.local on network (loop)
+Starting SDK app
+Starting server at port 80 for connCheck
+[1;36mConfiguration page: http://10.4.9.119:8080[0m
+Starting chipper server at port 443
+Starting chipper server at port 8084 for 2.0.1 compatibility
+[33m[1mwire-pod started successfully![0m
+signal: interrupt

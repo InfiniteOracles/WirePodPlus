@@ -57,6 +57,62 @@
       </div>
       <hr />
 
+      <div id="section-log" style="display: none">
+        <h2>Log</h2>
+        <hr class="small-hr">
+        <div class="center">
+          <div style="text-align:left">
+            <input id="logdebug" name="logdebug" type="checkbox" />
+            <label class="checkbox-label" for="logdebug">Show all logs</label><br />
+            <input id="logscrollbottom" name="logscrollbottom" type="checkbox" />
+            <label class="checkbox-label" for="logscrollbottom">Scroll to bottom</label>
+          </div>
+        </div>
+        <textarea id="botTranscriptedTextArea" rows="7" cols="50">
+          loading log...
+        </textarea>
+        <hr class="log-hr" />
+      </div>
+
+      <div id="section-version" style="display: none">
+        <h2>Version</h2>
+        <hr class="small-hr">
+        <div id="versionDiv">
+          <button onclick="checkUpdate()">
+            Check For Update
+          </button>
+          <hr class="small-hr">
+          <p id="cVersion"></p>
+          <small class="desc" style="display: none;" id="cCommit"></small>
+          <p id="aUpdate"></p>
+          <a id="updateGuideLink" style="display: none" target="_blank"
+            href="https://github.com/kercre123/wire-pod/wiki/Things-to-Know#updating-wire-pod">Update Guide</a>
+        </div>
+        <hr />
+      </div>
+
+      <div id="section-uicustomizer" style="display: none">
+        <h2>UI Customizer</h2>
+        <hr class="small-hr">
+        <p>Accent Color</p>
+        <select onchange="setUIColor()" id="accent-color-choose">
+          <option value="teal" selected="selected">Teal (default)</option>
+          <option value="orange">Orange</option>
+          <option value="yellow">Yellow</option>
+          <option value="lime">Lime</option>
+          <option value="sapphire">Sapphire</option>
+          <option value="purple">Purple</option>
+          <option value="green">Green</option>
+        </select>
+        <hr class="small-hr">
+        <p>Body Font</p>
+        <select onchange="setUIFont()" id="body-font-choose">
+          <option style="font-family: 'Sans-Serif';" value="droidsans" selected="selected">Sans-Serif (default)</option>
+          <option style="font-family: 'IBMVGA';" value="ibmvga">IBM VGA 8x16 (retro)</option>
+        </select>
+        <hr />
+      </div>
+
       <div id="section-weather" style="display: none">
         <h3>Weather API Setup</h3>
         <hr class="small-hr">
@@ -260,8 +316,8 @@
     </div>
   </div>
 </body>
-<script src="./js/ui.js"></script>
 <script src="./js/main.js"></script>
+<script src="./js/ui.js"></script>
 <script src="./sdkapp/js/main.js"></script>
 <script>
   updateWeatherAPI();

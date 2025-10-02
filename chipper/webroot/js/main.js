@@ -2,6 +2,16 @@ const intentsJson = JSON.parse(
   '["intent_greeting_hello", "intent_names_ask", "intent_imperative_eyecolor", "intent_character_age", "intent_explore_start", "intent_system_charger", "intent_system_sleep", "intent_greeting_goodmorning", "intent_greeting_goodnight", "intent_greeting_goodbye", "intent_seasonal_happynewyear", "intent_seasonal_happyholidays", "intent_amazon_signin", "intent_imperative_forward", "intent_imperative_turnaround", "intent_imperative_turnleft", "intent_imperative_turnright", "intent_play_rollcube", "intent_play_popawheelie", "intent_play_fistbump", "intent_play_blackjack", "intent_imperative_affirmative", "intent_imperative_negative", "intent_photo_take_extend", "intent_imperative_praise", "intent_imperative_abuse", "intent_weather_extend", "intent_imperative_apologize", "intent_imperative_backup", "intent_imperative_volumedown", "intent_imperative_volumeup", "intent_imperative_lookatme", "intent_imperative_volumelevel_extend", "intent_imperative_shutup", "intent_names_username_extend", "intent_imperative_come", "intent_imperative_love", "intent_knowledge_promptquestion", "intent_clock_checktimer", "intent_global_stop_extend", "intent_clock_settimer_extend", "intent_clock_time", "intent_imperative_quiet", "intent_imperative_dance", "intent_play_pickupcube", "intent_imperative_fetchcube", "intent_imperative_findcube", "intent_play_anytrick", "intent_message_recordmessage_extend", "intent_message_playmessage_extend", "intent_blackjack_hit", "intent_blackjack_stand", "intent_play_keepaway"]'
 );
 
+const indexSections = ["section-intents", "section-botauth"];
+const setupSections = ["section-log", "section-version", "section-uicustomizer", "section-weather", "section-kg", "section-restart", "section-language"];
+
+function getSections() {
+  if (window.location.pathname.includes("setup.html")) {
+    return setupSections;
+  }
+  return indexSections;
+}
+
 var GetLog = false;
 
 const getE = (element) => document.getElementById(element);
@@ -496,7 +506,7 @@ function updateColor(id) {
 
 
 function showLog() {
-  toggleVisibility(["section-intents", "section-log", "section-botauth", "section-version", "section-uicustomizer"], "section-log", "icon-Logs");
+  toggleVisibility(getSections(), "section-log", "icon-Logs");
   logDivArea = getE("botTranscriptedTextArea");
   getE("logscrollbottom").checked = true;
   logP = document.createElement("p");
@@ -570,7 +580,7 @@ function checkUpdate() {
 }
 
 function showLanguage() {
-  toggleVisibility(["section-weather", "section-restart", "section-kg", "section-language"], "section-language", "icon-Language");
+  toggleVisibility(getSections(), "section-language", "icon-Language");
   fetch("/api/get_stt_info")
     .then((response) => response.json())
     .then((parsed) => {
@@ -585,20 +595,20 @@ function showLanguage() {
 }
 
 function showVersion() {
-  toggleVisibility(["section-log", "section-botauth", "section-intents", "section-version", "section-uicustomizer"], "section-version", "icon-Version");
+  toggleVisibility(getSections(), "section-version", "icon-Version");
   checkUpdate();
 }
 
 function showIntents() {
-  toggleVisibility(["section-log", "section-botauth", "section-intents", "section-version", "section-uicustomizer"], "section-intents", "icon-Intents");
+  toggleVisibility(getSections(), "section-intents", "icon-Intents");
 }
 
 function showWeather() {
-  toggleVisibility(["section-weather", "section-restart", "section-language", "section-kg"], "section-weather", "icon-Weather");
+  toggleVisibility(getSections(), "section-weather", "icon-Weather");
 }
 
 function showKG() {
-  toggleVisibility(["section-weather", "section-restart", "section-language", "section-kg"], "section-kg", "icon-KG");
+  toggleVisibility(getSections(), "section-kg", "icon-KG");
 }
 
 function toggleVisibility(sections, sectionToShow, iconId) {
